@@ -41,5 +41,10 @@ The third one is the path where you want the images to be stored.
 
 ## Example Video
 
-![preview](https://photos-6.dropbox.com/t/2/AAB7yCxvLLJiRf5aSkkkKaCJ_AeUOI3J4be8mhBKo7mz7Q/12/3059639/jpeg/32x32/1/_/1/2/schloss-timelapse-160812.mp4/ELKCqgIYxxwgBygH/f5OSD6azPQwXtxIjfLvRogGPDb1B3DgEM5p1ZJZmfnc%2CIQOGfWs1KlFVWU96SXMNGwnGOU9hWHHHLAS8aqC6yWI%2CXpubZMljAhtcLKC-o4MkpWm32v_1FCc8BDdCpAdSmYo%2CLYwPMnL9XknDxt44BK_pVZybDUHnjpfnatP0GGbAFg8%2CefsZEKagYbS21mv1_l7NYUtUGAzEmMkqDgMTQCPfpXU?size=1024x768&size_mode=2)
+<video width="320" height="240" controls>
+  <source src="https://dl.dropboxusercontent.com/u/3059639/github/webcam-scripts/schloss-timelapse-160812.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+
 [Video](https://dl.dropboxusercontent.com/u/3059639/github/webcam-scripts/schloss-timelapse-160812.mp4)
