@@ -18,13 +18,14 @@ If you want to make a gif out of many images it can be that there is not enough 
 
 ## Installation
 
-Create a cronjob for webcams.sh which runs every minute. For creating the timelapse videos you need to create a second cronjob, which may run once per day, e.g.:
+Create a cronjob for webcams.sh which runs every minute. For creating the timelapse videos you need to create a second cronjob, which may run once per day. If you add a path to a html file to webcams.sh it will create a html file with the timelapse-videos embedded.
+
+Example:
 
 ```bash
 crontab -e
-*/1 * * * * /bin/bash /home/pi/scripts/webcams/webcams.sh
+*/1 * * * * /bin/bash /home/pi/scripts/webcams/webcams.sh /wwwroot/webcams/index.html
 10 0 * * * /bin/bash /home/pi/scripts/webcams/makevideo.sh
-
 ```
 
 Inside the cams.cfg you can define the webcams you want to grab, e.g.:
