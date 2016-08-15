@@ -7,7 +7,6 @@ function log(){
   echo "`date`: $1" >> $log
 }
 
-
 for d in `find $folders -mindepth 1 -type d`; do
   dates=`ls -1 $d | awk -F"-" '{print $3}'  | sort -u`
   log "dates found: $dates"

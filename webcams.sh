@@ -17,10 +17,11 @@ function log(){
 }
 for c in $configs; do
   while read line; do
+    filename=""
+    nowActive=""
     url=`echo $line | awk '{print $1}'`
     activeMins=`echo $line | awk '{print $2}'`
     target=`echo $line | awk '{print $3}'`
-    nowActive=""
     for m in `echo $activeMins | sed 's/,/ /g'`; do
       if [ $currentMin -eq $m ]; then
         nowActive=yes
@@ -28,7 +29,7 @@ for c in $configs; do
       fi
     done
     if [ "$nowActive" == "yes" ]; then
-      filename="`basename $target`-$filename"
+      filename="`basename $target`"
       filedate=`date +%y%m%d-%H%M%S`
       wget $url -O  $target/$filename-$filedate.jpg
       log "saving $target/$filename-$filedate.jpg"
@@ -45,12 +46,16 @@ if [ "$htmlPath" != "" ]; then
     for i in `ls -1 $d/*timelapse*.mp4`; do
       echo "<a href=$i>$i</a><br>" >> $htmlFile
       echo '
-  <video width="320" height="240" controls>
-    <source src="'$i'" type="video/mp4">
-  Your browser does not support the video tag.
-  </video><br><br>
-  ' >> $htmlFile
+        <video width="320" height="240" controls preload=metadata>
+          <source src="'$i'" type="video/mp4">
+        Your browser does not support the video tag.
+        </video><br><br>
+        ' >> $htmlFile
     done
+    cd $d
+    test -L timelapse.mp4 && rm timelapse.mp4
+    ln -s `ls -1rt *-timelapse*.mp4 | tail -1` timelapse.mp4
+    cd ..
   done
 fi
 exit
