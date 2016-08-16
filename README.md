@@ -42,9 +42,9 @@ The third one is the path where you want the images to be stored.
 
 ## Example Video
 
-[Link](https://dl.dropboxusercontent.com/u/3059639/github/webcam-scripts/schloss-timelapse-160812.mp4)
+[Example](https://dl.dropboxusercontent.com/u/3059639/github/webcam-scripts/schloss-timelapse-160812.mp4)
 
-[Video of Schlossarkaden yesterday](https://dl.dropboxusercontent.com/u/3059639/github/webcam-scripts/timelapse-schloss.mp4)
+[Newest video of Schlossarkaden](https://dl.dropboxusercontent.com/u/3059639/github/webcam-scripts/timelapse-schloss.mp4)
 
-[Video of Burgplatz yesterday](https://dl.dropboxusercontent.com/u/3059639/github/webcam-scripts/timelapse-burgplatz.mp4)
+[Newest video of Burgplatz](https://dl.dropboxusercontent.com/u/3059639/github/webcam-scripts/timelapse-burgplatz.mp4)
 
