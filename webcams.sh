@@ -45,12 +45,12 @@ if [ "$htmlPath" != "" ]; then
   for d in `find . -mindepth 1 -type d`; do
     for i in `ls -1 $d/*timelapse*.mp4`; do
       echo "<a href=$i>$i</a><br>" >> $htmlFile
-      echo '
-        <video width="320" height="240" controls preload=metadata>
-          <source src="'$i'" type="video/mp4">
-        Your browser does not support the video tag.
-        </video><br><br>
-        ' >> $htmlFile
+#      echo '
+#        <video width="320" height="240" controls preload=metadata>
+#          <source src="'$i'" type="video/mp4">
+#        Your browser does not support the video tag.
+#        </video><br><br>
+#        ' >> $htmlFile
     done
     cd $d
     test -L timelapse.mp4 && rm timelapse.mp4

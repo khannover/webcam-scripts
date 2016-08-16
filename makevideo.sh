@@ -8,11 +8,11 @@ function log(){
 }
 
 for d in `find $folders -mindepth 1 -type d`; do
-  dates=`ls -1 $d | awk -F"-" '{print $3}'  | sort -u`
+  dates=`ls -1 $d/*.jpg | awk -F"-" '{print $2}' | awk -F"." '{print $1}' | sort -u`
   log "dates found: $dates"
   for dat in $dates; do
     if [ ! -f $d/`basename $d`-timelapse-${dat}.mp4 ]; then
-      log "processing $d/`basename $d`-timelapse-$dat.gif"
+      log "processing $d/`basename $d`-timelapse-$dat.mp4"
       count=1
       for f in `ls $d/*${dat}*.jpg`; do
         countzero=$(printf "%05d" $count)
