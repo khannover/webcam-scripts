@@ -7,6 +7,9 @@ function log(){
   echo "`date`: $1" >> $log
 }
 
+# clean zero byte images
+find $folders -size 0 -exec rm "{}" \;
+
 today=`date +%y%m%d`
 for d in `find $folders -mindepth 1 -type d`; do
   dates=`ls -1 $d/*.jpg | awk -F"-" '{print $2}' | awk -F"." '{print $1}' | sort -u`
@@ -17,7 +20,7 @@ for d in `find $folders -mindepth 1 -type d`; do
       count=1
       for f in `ls $d/*${dat}*.jpg`; do
         countzero=$(printf "%05d" $count)
-        sudo cp $f /tmpfs/image_${countzero}.jpg
+        test -s $f && sudo cp $f /tmpfs/image_${countzero}.jpg
         let count="$count+1";
       done
       avconv -r 10 -i /tmpfs/image_%05d.jpg  \
@@ -27,3 +30,6 @@ for d in `find $folders -mindepth 1 -type d`; do
     fi
   done
 done
+
+/home/pi/scripts/webcams/makeblog.sh
+chronicle  --theme=blog.steve.org.uk.new --input=/home/pi/webcam-data/ --pattern='*.blog' --output=/wwwroot/blog/
