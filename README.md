@@ -13,8 +13,13 @@ To create gifs you need imagemagick:
 ``` bash
 sudo apt-get -y install imagemagick
 ```
+Note: If you want to make an animated gif out of many images it can be that there is not enough ram to complete the convert job. That's why i changed to creating videos.
 
-If you want to make a gif out of many images it can be that there is not enough ram to complete the convert job. That's why i changed to creating videos.
+If you want to create a blog with your videos you need chronicle:
+
+``` bash
+sudo apt-get install chronicle
+```
 
 ## Installation
 
